@@ -10,7 +10,7 @@ from config.models import CreationModificationDateBase
 
 class ImageSet(CreationModificationDateBase):
     name = models.CharField(max_length=100,
-                            help_text="eg. Delhi-trip, Tajmahal, flowers"
+                            help_text="eg. flowers, Istanbul, etc."
                             )
     description = models.TextField()
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
