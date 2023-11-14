@@ -1,8 +1,6 @@
-# Django Object Detection With YoloV5
+# Detecthub
 
-## Demo of the WebApp
-
-### A project to demonstrate easy integration of YoloV5 in Django WebApp
+### A project that makes it easy to try out your model and detect your image
 
 ## Features of the WebApp
 
