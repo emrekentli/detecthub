@@ -4,15 +4,13 @@
 
 ### A project to demonstrate easy integration of YoloV5 in Django WebApp
 
-Note: This is not a full-fledged production ready app though can be scaled to work as one.
-
 ## Features of the WebApp
 
 - Create/Edit ImageSets.
 - Upload multiple images with dropzonejs to the selected ImageSet.
 - Convert uploaded image size to 640 x 640. (For faster detection)
-- Upload/update a custom pre-trained model.(If you have offline files of a model)
-- YoloV5 models will download upon selection. (Active internet connection required for this step.)
+- Upload/update a custom pre-trained model.
+- YoloV5 models will download upon selection. 
 - Detect object on an image with YoloV5/custom pre-trained model.
 
 ### Note
@@ -66,7 +64,3 @@ Create ImageSet
 
 - dropzonejs
 - ekko-lightbox
-
-## Django starter template used
-
-[DjangoAdvancedBoilerplate](https://github.com/CodingMantras/DjangoAdvancedBoilerplate)
