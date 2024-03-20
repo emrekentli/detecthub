@@ -13,11 +13,11 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             user = User.objects.get(username=username)
-            user.is_active = False
+            user.is_active = True
             user.save()
             messages.success(
                 request, f'Your account with {username} has been created! You are now able to log in')
-            return redirect('users:registration_under_approval_url')
+            return redirect('users:login')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
