@@ -2,37 +2,112 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-  Register
+    Register
 {% endblock title %}
 
-{% block leftbar %}
-<div class="col-sm-3">
-    
-</div>
-{% endblock leftbar %}
-
 {% block content %}
-<div class="col-sm-7">
-    <div class="content">
-        <div class="card">
-            <div class="card-body">
-                <form method="POST">
-                    {% csrf_token %}
-                    <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Register</legend>
-                        {{ form|crispy }}
-                    </fieldset>
-                    <div class="form-group">
-                        <button class="btn btn-sm btn-outline-info mt-2" type="submit">Sign Up</button>
+    <section class="h-100 gradient-form" style="background-color: white;"> <!-- Hintergrund auf weiß geändert -->
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+
+                                    <div class="text-center">
+                                        <h4 class="mt-1 mb-5 pb-1">Welcome to DetectHub</h4>
+                                    </div>
+                                    <h2 class="card-title text-center mb-4">Register</h2>
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        {{ form|crispy }}
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-outline-info btn-block" type="submit">
+                                                <span class="btn-text">Sign Up</span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <hr class="bg-light">
+                                    <div class="border-top pt-3">
+                                        <small class="text-muted">
+                                            Already Have An Account? <a class="ml-2" href="{% url 'users:login' %}">Sign In</a>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2 text-white"> <!-- Hintergrund auf schwarz geändert -->
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">Be Part of a Thriving AI Community</h4>
+                                    <p class="small mb-0">By joining our community, you gain access to a wealth of knowledge and resources in the fields of computer vision, artificial intelligence, machine learning, and object detection.</p>
+                                    <p></p>
+                                    <p class="small mb-0">As a member, you can:</p>
+                                    <p></p>
+                                    <ul class="small mb-0">
+                                        <li>Collaborate on projects and share your own work.</li>
+                                        <li>Get feedback and support from experts and peers.</li>
+                                    </ul>
+                                    <p></p>
+                                    <p class="small mb-0">We look forward to seeing what you create and contribute to our vibrant community!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </form>
-                <div class="border-top pt-3">
-                    <small class="text-muted">
-                        Already Have An Account? <a class="ml-2" href="{% url 'users:login' %}">Sign In</a>
-                    </small>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 {% endblock content %}
+
+{% block extra_head %}
+<style>
+    body {
+        background-color: white;
+    }
+
+    .gradient-custom-2 {
+        background: #000;
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+
+    .navbar {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .gradient-form {
+        margin-top: 10px;
+    }
+
+    .btn-outline-info {
+        color: black;
+        border-color: black;
+    }
+    .btn-outline-info:hover {
+        color: white;
+        background-color: black;
+        border-color: black;
+    }
+    .btn-text {
+        display: block;
+    }
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .navbar .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-collapse {
+        justify-content: center;
+    }
+</style>
+{% endblock extra_head %}
