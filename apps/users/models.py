@@ -6,8 +6,8 @@ from PIL import Image
 
 
 class Organization(models.TextChoices):
-    A = 'A', _("A")
-    B = 'B', _("B")
+    A = 'A', _("Male")
+    B = 'B', _("Female")
 
 
 class CustomUser(AbstractUser):
