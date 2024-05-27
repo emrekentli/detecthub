@@ -6,7 +6,7 @@
 {% endblock title %}
 
 {% block content %}
-    <section class="h-100 gradient-form" style="background-color: white;"> <!-- Hintergrund auf weiß geändert -->
+    <section class="h-100 gradient-form" style="background-color: white;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
@@ -14,14 +14,17 @@
                         <div class="row g-0">
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
-
                                     <div class="text-center">
                                         <h4 class="mt-1 mb-5 pb-1">Welcome to DetectHub</h4>
                                     </div>
                                     <h2 class="card-title text-center mb-4">Register</h2>
                                     <form method="POST">
                                         {% csrf_token %}
-                                        {{ form|crispy }}
+                                        {{ form.username|as_crispy_field }}
+                                        {{ form.email|as_crispy_field }}
+                                        {{ form.gender|as_crispy_field }}
+                                        {{ form.password1|as_crispy_field }}
+                                        {{ form.password2|as_crispy_field }}
                                         <div class="text-center mt-4">
                                             <button class="btn btn-outline-info btn-block" type="submit">
                                                 <span class="btn-text">Sign Up</span>
@@ -36,7 +39,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2 text-white"> <!-- Hintergrund auf schwarz geändert -->
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2 text-white">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4">Be Part of a Thriving AI Community</h4>
                                     <p class="small mb-0">By joining our community, you gain access to a wealth of knowledge and resources in the fields of computer vision, artificial intelligence, machine learning, and object detection.</p>
